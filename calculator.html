@@ -6,92 +6,101 @@
     <title>Calculator</title>
 </head>
 <body>
-    <p>Calculator</p>
+    <p class="js-workspace"></p>
     <p>
         <button onclick="
-                calculation += '1'
-                console.log(calculation)
+                calculation.value += '1'
+                updateWorkspace()
             ">1</button>
         <button onclick="
-                calculation += '2'
-                console.log(calculation)
+                calculation.value += '2'
+                updateWorkspace()
             ">2</button>
         <button onclick="
-                calculation += '3'
-                console.log(calculation)
+                calculation.value += '3'
+                updateWorkspace()
             ">3</button>
         <button onclick="
-                calculation += ' + '
-                console.log(calculation)
+                calculation.value += ' + '
+                updateWorkspace()
             ">+</button>
     </p>
 
     <p>
         <button onclick="
-                calculation += '4'
-                console.log(calculation)
+                calculation.value += '4'
+                updateWorkspace()
             ">4</button>
         <button onclick="
-                calculation += '5'
-                console.log(calculation)
+                calculation.value += '5'
+                updateWorkspace()
             ">5</button>
         <button onclick="
-                calculation += '6'
-                console.log(calculation)
+                calculation.value += '6'
+                updateWorkspace()
             ">6</button>
         <button onclick="
-                calculation += ' - '
-                console.log(calculation)
+                calculation.value += ' - '
+                updateWorkspace()
             ">-</button>
     </p>
 
     <p>
         <button onclick="
-                calculation += '7'
-                console.log(calculation)
+                calculation.value += '7'
+                updateWorkspace()
             ">7</button>
         <button onclick="
-                calculation += '8'
-                console.log(calculation)
+                calculation.value += '8'
+                updateWorkspace()
             ">8</button>
         <button onclick="
-                calculation += '9'
-                console.log(calculation)
+                calculation.value += '9'
+                updateWorkspace()
             ">9</button>
         <button onclick="
-                calculation += ' * '
-                console.log(calculation)
+                calculation.value += ' * '
+                updateWorkspace()
             ">*</button>
     </p>
 
     <p>
         <button onclick="
-                calculation += '0'
-                console.log(calculation)
+                calculation.value += '0'
+                updateWorkspace()
             ">0</button>
         <button onclick="
-                calculation += '.'
-                console.log(calculation)
+                calculation.value += '.'
+                updateWorkspace()
             ">.</button>
         <button onclick="
-        // calculation = Math.round(eval(calculation))
-        calculation = eval(calculation)
-        console.log(calculation)
+        // calculation.value = Math.round(eval(calculation.value))
+        calculation.value = eval(calculation.value)
+        updateWorkspace()
         ">=</button>
         <button onclick="
-                calculation += ' / '
-                console.log(calculation)
+                calculation.value += ' / '
+                updateWorkspace()
             ">/</button>
     </p>
     <button onclick="
-        calculation = '';
+        calculation.value = '';
+        updateWorkspace()
         console.log('Cleared.');
     ">Clear</button>
 
     
     <script>
-        let calculation = '';
+        let calculation = JSON.parse(localStorage.getItem('saveCalculation')) ||{
+            value: ''
+        };
+        document.querySelector('.js-workspace').innerHTML = calculation.value
         
+        function updateWorkspace() {
+            const workspace = document.querySelector('.js-workspace')
+            localStorage.setItem('saveCalculation', JSON.stringify(calculation))
+            workspace.innerHTML = calculation.value
+        }
     </script>
 </body>
 </html>
