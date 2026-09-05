@@ -6,48 +6,7 @@
     <title>Calculator</title>
 </head>
 <body>
-    <p>
-        <button onclick="
-                calculation += '7'
-                console.log(calculation)
-            ">7</button>
-        <button onclick="
-                calculation += '8'
-                console.log(calculation)
-            ">8</button>
-        <button onclick="
-                calculation += '9'
-                console.log(calculation)
-            ">9</button>
-        <button onclick="
-                calculation = ''
-                console.log(calculation)
-            ">AC</button>
-    </p>
-
-    <p>
-        <button onclick="
-                calculation += '4'
-                console.log(calculation)
-            ">4</button>
-        <button onclick="
-                calculation += '5'
-                console.log(calculation)
-            ">5</button>
-        <button onclick="
-                calculation += '6'
-                console.log(calculation)
-            ">6</button>
-        <button onclick="
-                calculation += ' * '
-                console.log(calculation)
-            ">*</button>
-        <button onclick="
-                calculation += ' / '
-                console.log(calculation)
-            ">/</button>
-    </p>
-
+    <p>Calculator</p>
     <p>
         <button onclick="
                 calculation += '1'
@@ -65,10 +24,44 @@
                 calculation += ' + '
                 console.log(calculation)
             ">+</button>
+    </p>
+
+    <p>
+        <button onclick="
+                calculation += '4'
+                console.log(calculation)
+            ">4</button>
+        <button onclick="
+                calculation += '5'
+                console.log(calculation)
+            ">5</button>
+        <button onclick="
+                calculation += '6'
+                console.log(calculation)
+            ">6</button>
         <button onclick="
                 calculation += ' - '
                 console.log(calculation)
             ">-</button>
+    </p>
+
+    <p>
+        <button onclick="
+                calculation += '7'
+                console.log(calculation)
+            ">7</button>
+        <button onclick="
+                calculation += '8'
+                console.log(calculation)
+            ">8</button>
+        <button onclick="
+                calculation += '9'
+                console.log(calculation)
+            ">9</button>
+        <button onclick="
+                calculation += ' * '
+                console.log(calculation)
+            ">*</button>
     </p>
 
     <p>
@@ -80,29 +73,25 @@
                 calculation += '.'
                 console.log(calculation)
             ">.</button>
-        <button></button>
-        <button></button>
         <button onclick="
+        // calculation = Math.round(eval(calculation))
         calculation = eval(calculation)
         console.log(calculation)
-        //calculation = '' 
         ">=</button>
-    </p>
-
-    <p>
         <button onclick="
-            convertToFahrenheit(calculation)            
-            ">Convert to Fahrenheit</button>
+                calculation += ' / '
+                console.log(calculation)
+            ">/</button>
     </p>
+    <button onclick="
+        calculation = '';
+        console.log('Cleared.');
+    ">Clear</button>
 
     
     <script>
         let calculation = '';
-        function convertToFahrenheit(Celsius) {
-            let fahrenheit = Math.round(Celsius * 9 / 5) + 32;
-            console.log(`${fahrenheit} degree Fahrenheit`)
-        }
-        // console.log(message)
+        
     </script>
 </body>
 </html>
