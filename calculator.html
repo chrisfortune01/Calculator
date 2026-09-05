@@ -4,86 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .css-workspace {
+            font-size: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            padding-top: 6px;
+        }
+        button {
+            border: none;
+            font-size: 26px;
+            height: 60px;
+            width: 60px;
+            margin-right: 6px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .numbers {
+            background-color: rgb(51, 51, 51);
+            color: white;
+        }
+        .symbols {
+            background-color: orange;
+            color: white;
+        }
+        .clear-button {
+            font-size: 17px;
+            background-color: rgb(51, 51, 51);
+            color: white;   
+        }
+    </style>
 </head>
 <body>
-    <p class="js-workspace"></p>
+    <p class="js-workspace css-workspace"></p>
     <p>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '1'
                 updateWorkspace()
             ">1</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '2'
                 updateWorkspace()
             ">2</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '3'
                 updateWorkspace()
             ">3</button>
-        <button onclick="
+        <button class="symbols" onclick="
                 calculation.value += ' + '
                 updateWorkspace()
             ">+</button>
     </p>
 
     <p>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '4'
                 updateWorkspace()
             ">4</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '5'
                 updateWorkspace()
             ">5</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '6'
                 updateWorkspace()
             ">6</button>
-        <button onclick="
+        <button class="symbols" onclick="
                 calculation.value += ' - '
                 updateWorkspace()
             ">-</button>
     </p>
 
     <p>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '7'
                 updateWorkspace()
             ">7</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '8'
                 updateWorkspace()
             ">8</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '9'
                 updateWorkspace()
             ">9</button>
-        <button onclick="
+        <button class="symbols" onclick="
                 calculation.value += ' * '
                 updateWorkspace()
             ">*</button>
     </p>
 
     <p>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '0'
                 updateWorkspace()
             ">0</button>
-        <button onclick="
+        <button class="numbers" onclick="
                 calculation.value += '.'
                 updateWorkspace()
             ">.</button>
-        <button onclick="
+        <button class="numbers" onclick="
         // calculation.value = Math.round(eval(calculation.value))
         calculation.value = eval(calculation.value)
         updateWorkspace()
         ">=</button>
-        <button onclick="
+        <button class="symbols" onclick="
                 calculation.value += ' / '
                 updateWorkspace()
             ">/</button>
     </p>
-    <button onclick="
+    <button class="clear-button" onclick="
         calculation.value = '';
         updateWorkspace()
         console.log('Cleared.');
